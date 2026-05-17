@@ -1,0 +1,334 @@
+% ------------------------------------------------------------
+\documentclass{WitsHomework}
+% ------------------------------------------------------------
+
+
+% ------------------------------------------------------------
+\StudentName{Reneiloe Nyathela}
+\StudentNumber{2803374}
+\CourseCode{APPM2023A}
+\CourseName{Mechanics ||}
+\AssignmentNumber{02}
+\AssignmentName{Nonlinear Pendulum}
+\DueDate{27 October 2025}
+% ------------------------------------------------------------
+
+% ------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------
+\section*{Question 1-The Ellipse and the Circle}
+\subsection*{[1.1]}
+We have 
+$$x=acos(\theta) \quad\text{and}\quad y=bsin(\theta)$$
+Implicitly differentiating both sides of the above equations we get
+$$dx=-asin(\theta)d\theta \quad\text{and}\quad dy=bcos(\theta)d\theta$$
+But we know that 
+$$dl^2=dx^2+dy^2=a^2sin^2(\theta)d\theta^2+b^2cos^2(\theta)d\theta^2$$
+Square rooting both sides, factoring out $d\theta^2$ and using the identity $cos^2(\theta)=1-sin^2(\theta)$, we get
+$$dl=\sqrt{d\theta^2(a^2sin^2(\theta)+b^2(1-cos^2(\theta)))}$$
+$$dl=d\theta\sqrt{b^2[\frac{a^2}{b^2}sin^2(\theta)+1-sin^2(\theta)]}$$
+$$dl=d\theta\sqrt{b^2[(\frac{a^2}{b^2}-1)sin^2(\theta)+1]}$$
+$$dl=bd\theta\sqrt{1-(1-\frac{a^2}{b^2})sin^2(\theta)}$$
+Integrating both sides
+$$l(\Theta)=b\int_{0}^{\Theta}d\theta\sqrt{1-(1-\frac{a^2}{b^2})sin^2(\theta)}$$
+$$m=(1-\frac{a^2}{b^2})$$
+$$l(\Theta)=b\int_{0}^{\Theta}d\theta\sqrt{1-msin^2(\theta)}$$
+
+\subsection*{[1.2]}
+Given
+$$\left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2=1$$
+And that 
+$$\frac{x}{r}=cn(u,k)\implies x=rcn(u,k)\quad\text{and}\quad \frac{y}{r}=sn(u,k)\implies y=rsn(u,k)$$. Substituting in the above we have
+Isolating $r^2$ we have:
+$$r^2=\frac{a^2b^2}{b^2cn^2+a^2sn^2}$$
+Given that $cn=cos(\theta)$ and $sn=sin(\theta)$. we have
+$$r^2=\frac{a^2b^2}{b^2cos^2(\theta)+a^2sin^2(\theta)}$$
+Factoring out $b^2$ in the denominator:
+$$r^2=\frac{a^2b^2}{b^2\left( cos^2(\theta)+\frac{a^2}{b^2}sin^2(\theta)\right)}$$
+$$r^2=\frac{a^2}{\left( cos^2(\theta)+\frac{a^2}{b^2}sin^2(\theta)\right)}$$
+Using the identity $cos^2(\theta)=1-sin^2(\theta)$, we get
+$$r^2=\frac{a^2}{\left(1- sin^2(\theta)+\frac{a^2}{b^2}sin^2(\theta)\right)}$$
+$$r^2=\frac{a^2}{\left(1+(\frac{a^2}{b^2}-1)sin^2(\theta)\right)}$$
+$$r^2=\frac{a^2}{\left(1-(-\frac{a^2}{b^2}+1)sin^2(\theta)\right)}$$
+$$r=\sqrt{\frac{a^2}{\left(1-(-\frac{a^2}{b^2}+1)sin^2(\theta)\right)}}=\frac{a}{\sqrt{\left(1-(-\frac{a^2}{b^2}+1)sin^2(\theta)\right)}}$$
+Therefore $k=-\frac{a^2}{b^2}+1$
+$$r=\frac{a}{\sqrt{1-ksin^2(\theta)}}$$
+The eccentricity of an ellipse is given by;
+$$e=\sqrt{1-\frac{b^2}{a^2}}$$
+\subsection*{[1.3]}
+Given that:
+$$F(\theta,k)=\int_{0}^{\theta}\frac{d\psi}{\sqrt{1-ksin^2(\psi)}} \quad\text{and}\quad K(k)=F(\pi/2,k )$$ 
+Meaning
+$$aK(k)=\int_{0}^{\pi/2} \frac{ad\psi}{\sqrt{1-ksin^2(\psi)}}$$
+And that $du=rd\theta$ , $u=F(\theta,k)$ parametrises the circumferences of the ellipse, this means that
+$$u=\int du=\int\frac{d\psi}{\sqrt{1-ksin^2(\psi)}}=F(\theta,k)$$
+Therefore
+$$du=\frac{d\theta}{\sqrt{1-ksin^2(\psi)}}$$
+Since $du=rd\theta$, and $r(\theta,k)=\frac{a}{\sqrt{1-ksin^2(\theta)}}$ ,then
+$$rd\theta =\frac{ad\theta}{\sqrt{1-ksin^2(\psi)}} $$
+Therefore
+$$aK(k)=\int_{0}^{\pi /2} d\theta r(\theta,k)$$
+To show the second one we use 
+$$K(k)=\int_{0}^{\pi/2} \frac{d\psi}{\sqrt{1-ksin^2(\psi)}}$$
+Let $$z=sin(\psi)$$
+$$dz=cos(\psi)d\psi\implies d\psi=\frac{dz}{cos(\psi)}$$
+Obtaining the new bounds, we have
+$$ \psi=0$$
+$$z=sin(\psi)=sin(0)=0$$
+$$\psi=\frac{\pi}{2}$$
+$$z=sin(\psi)=sin(\pi/2)=1$$
+Constructing the integral 
+$$K(k)=\int_{0}^{1} \frac{dz}{cos(\psi)} \frac{1}{\sqrt{1-kz^2}}=\int_{0}^{1} \frac{dz}{\sqrt{cos^2(\psi)(1-kz^2)}}$$
+Since $cos^2(\psi)=1-sin^2(\psi)=1-z^2$. We have
+$$K(k)=\int_{0}^{1} \frac{dz}{\sqrt{(1-z^2)(1-kz^2)}}$$
+\subsection*{[1.4]}
+Let us assume that $P$ stands/represents the semi-major axis and $Q$ is for the minor axis. The eccenstricity is given by
+$$e=\sqrt{1-\frac{P^2}{Q^2}}$$ 
+Generally the smaller shape parameter goes along with the semi-minor axis and the larger shape parameter goes with the semi-major axis. And since we assumed that $a<b$, This then allows us to say
+$$P=a \quad\text{and}\quad Q=b$$
+Giving the eccenstricity as 
+$$e=\sqrt{1-\frac{a^2}{b^2}}$$
+This then means the below is satisfied 
+$$\frac{a^2}{b^2}<1 \implies 0<1-\frac{a^2}{b^2}<1\implies 0<\sqrt{1-\frac{a^2}{b^2}}<1$$
+So for strict $a<b$ we have 
+$$0<e<1$$
+\section*{Question 2-Analytic Analysis}
+\subsection*{[2.1]}
+Given 
+$$\frac{d^2\theta}{dt^2}+\omega_0^2sin(\theta)=0 \quad\text{and}\quad \omega_0=\frac{g}{l}$$
+Multiplying both side of the above equation by $\frac{d\theta}{dt}$, we get
+$$\frac{d\theta}{dt}\left(\frac{d^2\theta}{dt^2}+\omega_0^2 sin(\theta)\right)=\frac{d\theta}{dt}0$$
+$$\frac{d\theta}{dt}\left(\frac{d^2\theta}{dt^2}\right)+\omega_0^2 sin(\theta)\frac{d\theta}{dt}=0$$
+Applying reverse chain, by integration both sides with respect to $dt$ we get
+$$\int \frac{d\theta}{dt}\left(\frac{d^2\theta}{dt^2}\right)+\omega_0^2 sin(\theta)\frac{d\theta}{dt}dt=\int 0dt$$
+$$\frac{d}{dt}\left(\int\frac{d^2\theta}{dt^2}d\theta+\omega_0^2 \int sin(\theta)d\theta\right)=\int 0dt$$
+Applying the integrating we end up with
+$$\frac{d}{dt}\left(\frac{1}{2}\left(\frac{d\theta}{dt}\right)^2-\omega_0^2 cos(\theta)\right)=0$$
+\subsection*{[2.2]}
+Assuming an object with mechanical energy 
+$$E=T+U$$
+Which we assume this mechanical energy is conserved. Now coming to a pendulum, we know the kinetic and potential energies of a pendulum with mass $m$ and length $l$, given by
+$$T=\frac{1}{2}ml^2\left(\frac{d\theta}{dt}\right)^2 \quad\text{and}\quad U=-mglcos(\theta)$$
+So if we multiply the equation (5) by $ml^2$ and note that $\omega_0=\frac{g}{l}$ we get
+$$\frac{1}{2}ml^2\left(\frac{d\theta}{dt}\right)^2+m\frac{g}{l} l^2cos(\theta)=0$$
+$$\frac{1}{2}ml^2\left(\frac{d\theta}{dt}\right)^2+mglcos(\theta)=0$$
+Which corresponds to the Lagrangian which corresponds to the conservation of mechanical energy
+\subsection*{[2.3]}
+Given equation(18)
+$$\left(\frac{dz}{d\tau}\right)^2=(1-z^2)(1-kz^2)$$
+Square rooting both sides and separating variables we get
+$$\frac{dz}{d\tau}=\pm \sqrt{(1-z^2)(1-kz^2)}$$
+$$d\tau=\pm \frac{dz}{\sqrt{(1-z^2)(1-kz^2)}}$$
+Integrating both side we obtain
+$$\tau=-\int_{1}^{z} \frac{d\zeta}{\sqrt{(1-\zeta^2)(1-k\zeta^2)}}$$
+We are told $\tau$ is time and moves from point (1,0) to $(z,dz/d\tau)$ in the lower half of the plane of the graph. Hence the negative sign in front of the integral above. Using the trick:
+$$\int_{a}^{b} f(x)dx=-\int_{b}^{a} f(x)dx$$
+We have that
+$$\tau=\int_{z}^{1} \frac{d\zeta}{\sqrt{(1-\zeta^2)(1-k\zeta^2)}}$$
+Since we know that time moves in one direction, and should move from 0, then we have that
+$$\int_{0}^{1} \frac{d\zeta}{\sqrt{(1-\zeta^2)(1-k\zeta^2)}}=\int_{0}^{z} \frac{d\zeta}{\sqrt{(1-\zeta^2)(1-k\zeta^2)}}+\int_{z}^{1} \frac{d\zeta}{\sqrt{(1-\zeta^2)(1-k\zeta^2)}}$$
+If we re-arrange the above we get
+$$\int_{z}^{1} \frac{d\zeta}{\sqrt{(1-\zeta^2)(1-k\zeta^2)}}=\int_{0}^{1} \frac{d\zeta}{\sqrt{(1-\zeta^2)(1-k\zeta^2)}}-\int_{0}^{z} \frac{d\zeta}{\sqrt{(1-\zeta^2)(1-k\zeta^2)}}$$
+Therefore
+$$\tau=\int_{0}^{1} \frac{d\zeta}{\sqrt{(1-\zeta^2)(1-k\zeta^2)}}-\int_{0}^{z} \frac{d\zeta}{\sqrt{(1-\zeta^2)(1-k\zeta^2)}}$$
+$\tau$ essentially the period of the pendulum
+\subsection*{[2.4]}
+Equations (19) are given as
+$$z(0)=1 \quad\text{and}\quad \left(\frac{d\theta}{dt}\right)_\tau=0$$
+Given that 
+$$\tau=\omega_0 t \quad\text{and}\quad z=\frac{y}{\sqrt{k}}$$
+Implicitly differentiating both the above equations we get
+$$d\tau=\omega_0 dt \quad\text{and}\quad dz=\frac{1}{\sqrt{k}}dy$$
+If we take $\frac{dz}{d\tau}$ we get
+$$\frac{dz}{d\tau}=\frac{1}{\sqrt{k}}dy\times\frac{1}{\omega_0dt}$$
+$$\frac{dz}{d\tau}=\frac{1}{\omega_0\sqrt{k}}\times\frac{dy}{dt}$$
+Given that 
+$$y=sin\left(\frac{\theta}{2}\right)$$
+Therefore
+$$\frac{dy}{dt}=\frac{1}{2}cos\left(\frac{\theta}{2}\right)\left(\frac{d\theta}{dt}\right)_{t=0}$$
+But we are given $\left(\frac{d\theta}{dt}\right)_{t=0}=0$. Therefore
+$$\frac{dy}{dt}=\frac{1}{2}cos\left(\frac{\theta}{2}\right)\times0=0$$
+Therefore
+$$\frac{dz}{d\tau}=\frac{1}{\omega_0\sqrt{k}}\times0=0$$
+Therefore
+$$\left(\frac{dz}{d\tau}\right)_\tau=0$$
+Going back we have
+$$z=\frac{y}{\sqrt{k}}$$
+Since $y$ is a function of $\theta$, we can write $z(\theta)$. z changes when $\theta$ changes. So if we set $\theta=0$ we get that
+$$z(0)=\frac{y(0)}{\sqrt{k}}=\frac{\sqrt{k}}{\sqrt{k}}=1$$
+Therefore
+$$z(0)=1$$
+These proven are the initial conditions with respect to the new variables using the old initial conditions and variables
+\subsection*{[2.5]}
+Given that 
+$$\tau(z)=K(k)-F(arcsin z;k)$$
+We know that 
+$$u=F(\theta,k)\implies u=F(arcsinz,k)$$
+$$\implies \theta=arcsinz \quad\text{and}\quad z=sin(\theta)$$
+Therefore we have that
+$$u=K(k)-\tau(z)$$
+We know that 
+$$z=sn(u;k)$$
+Therefore
+$$z=sn(K(k)-\tau(z));k$$
+We were given that 
+\[
+k = \sin^2\left(\frac{\theta_0}{2}\right)
+\quad \text{and} \quad
+z = \frac{y}{\sqrt{k}}
+\]
+where
+\[
+y = \sin\left(\frac{\theta}{2}\right)
+\]
+
+\noindent Therefore,
+\[
+z = \frac{\sin\left(\frac{\theta}{2}\right)}{\sqrt{\sin^2\left(\frac{\theta_0}{2}\right)}}
+= \frac{\sin\left(\frac{\theta}{2}\right)}{\sin\left(\frac{\theta_0}{2}\right)}
+\]
+and
+\[
+\tau = \omega_0 t
+\]
+
+\noindent If we make a substitution for \( z \) and \( k \) we get that
+\[
+\frac{\sin\left(\frac{\theta}{2}\right)}{\sin\left(\frac{\theta_0}{2}\right)} 
+= \ sn \left( K \sin^2\left(\frac{\theta_0}{2}\right) - \omega_0 t;\sin^2\left(\frac{\theta_0}{2}\right) \right)
+\]
+
+\noindent this then gives us
+\[
+\sin\left(\frac{\theta}{2}\right)
+= \sin\left(\frac{\theta_0}{2}\right)
+\ sn\left(
+K \sin^2\left(\frac{\theta_0}{2}\right)
+- \omega_0 t ;\sin^2\left(\frac{\theta_0}{2}\right)
+\right)
+\]
+Taking the arcsin to get $\theta$ and multiplying both sides by 2 gives that the following equation
+$$\theta=2arcsin\left(sin\left(\frac{\theta_0}{2}\right)sn\left(K\left(sin^2\left(\frac{\theta_0}{2}\right)\right)-\omega_0t;sin^2\left(\frac{\theta_0}{2}\right)\right)\right)$$
+\subsection*{[2.6]}
+We know from the standard equation that
+$$\omega=\frac{2\pi}{T}$$
+We are told that the period is 4 times the time taken by the pendulum to oscillate from $\theta=0 \quad\text{to}\quad \theta=\theta_0$. Therefore we get
+$$T=4\times t(0)=4\frac{K(k)}{\omega_0}$$
+Substituting to $\omega$ we get
+$$\omega=\frac{2 \pi}{T}=2\pi \times \frac{\omega_0}{4 K(k)}=\frac{\pi \omega_0}{2K(k)}$$
+But we know that $k=sin^2\left(\frac{\theta_0}{2}\right)$. Therefore
+$$\omega=\frac{\pi \omega_0}{2K(sin^2\left(\frac{\theta_0}{2}\right))}$$
+From the above equation we can make relations such that $\omega \propto \omega_0$, they are directly proportional. Since $\theta$ increases with the $sin$ function and $\omega \propto \frac{1}{sin^2(\theta_0/2)}$, this implies that $\omega \propto \frac{1}{\theta_0}$. 
+\subsection*{[2.7]}
+In the nonlinear pendulum the eccentricity of its elliptical path shows up in how it swings. When the pendulum reaches the extremes from an oscillation of its motion, it tends to slows down, almost pausing before turning back and then it approaches the center. This uneven pace stretches the phase-space trajectory along the angle axis, making the ellipse more elongated rather than perfectly round. The bigger the swing the more pronounced this stretching becomes. So the eccentricity of the ellipse is sort of a reflection of the pendulum’s varying speed from swing to swing
+\section*{Question 3-Numerical Analysis}
+\subsection*{[3.1]}
+The 8-th order Taylor approximation of $K(k)$. We taylor expand the integrand and then integrate the approximated integrand. \\
+
+Let
+$$f(k)=(1-ksin^2(\psi))^{-\frac{1}{2}}$$
+Taylor expanding the above we get and evaluating each approximation at 0 we get
+$$f\prime (k)=\frac{1}{2}sin^2(\psi)(1-ksin^2(\psi))^{-\frac{3}{2}}$$
+$$K_8(k) \implies f\prime(0)=\frac{1}{2}sin^2(\psi)$$
+$$f\prime \prime(k)=\frac{1}{2}\frac{3}{2}sin^2(\psi)(1-ksin^2(\psi))^{-\frac{5}{2}} \implies f\prime \prime(0)=\frac{1}{2}\frac{3}{2}sin^2(\psi)$$
+Spotting a pattern her we can write the n-th derivative of f, $f^{(n)}$
+$$f^{(n)}=k^n sin^{2n}(\psi)$$
+Completing the expansion we get that
+$$K_8(k)=k^n\int_{0}^{\frac{\pi}{2}} sin^{2n}(\psi)d\psi=\frac{k^n}{4^n}\frac{(2n)!}{n!(2n-n)!}=\frac{k^n}{4^n}\frac{(2n)!}{(n!)^2}$$
+Therefore
+Absolute error is 
+$$|K(k)-K_8(k)|<0.01 \implies k\approx 0.737$$
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{mecha02-5cc48698-95df-49b5-80b2-40fe8f6a675e.pdf}
+    \label{fig:placeholder}
+\end{figure}
+\subsection*{[3.2]}
+$\theta$ was calculated to be 
+$$\theta=2arcsin\left(sin\left(\frac{\theta_0}{2}\right)sn\left(K\left(sin^2\left(\frac{\theta_0}{2}\right)\right)-\omega_0t;sin^2\left(\frac{\theta_0}{2}\right)\right)\right)$$
+Taylor expanding the above up about $t$ to third order we get
+$$\theta_{Taylor}=\theta _0cos(\omega_0\left(1+\frac{\theta^2_0}{16}\right)t)+\frac{\theta_0^3}{192}cos(3\omega_0\left(1+\frac{\theta^2_0}{16}\right)t)-3cos(\omega_0\left(1+\frac{\theta^2_0}{16}\right)t)$$
+Computing the first time derivative of the above approximation we get. Let $m=\omega_0\left(1+\frac{\theta_0^2}{16}\right)$
+$$\dot{\theta}_{Taylor}(t)=-m\theta_0 sin(mt)-\frac{\theta_0^3}{64}msin(3mt)+\frac{\theta_0^3}{64}sin(mt)$$
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{mecha02-2fb315f1-30b1-40c8-837a-dc0da472f879.pdf}
+    \label{fig:placeholder}
+\end{figure}
+
+\subsection*{[3.3]}
+The $\theta s$ there are
+$$\theta_{Exact}=2arcsin\left(sin\left(\frac{\theta_0}{2}\right)sn\left(K\left(sin^2\left(\frac{\theta_0}{2}\right)\right)-\omega_0t;sin^2\left(\frac{\theta_0}{2}\right)\right)\right)$$
+
+$$\theta_{Taylor}=\theta _0cos(\omega_0\left(1+\frac{\theta^2_0}{16}\right)t)+\frac{\theta_0^3}{192}cos(3\omega_0\left(1+\frac{\theta^2_0}{16}\right)t)-3cos(\omega_0\left(1+\frac{\theta^2_0}{16}\right)t)$$
+
+We know of the equations of motion of a simple pendulum that 
+$$\frac{d^2\theta_0}{dt^2}+\frac{g}{l}sin(\theta)=0$$
+We then get that 
+$$\theta_{Euler}(t)=\theta_0$$
+And $\theta_{Simple}$ is simply
+$$\theta_{Simple}=\theta_0 cos(\omega_0t)$$
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{mecha02-5888eeee-7c36-470a-9aa2-9de6b61264e4 (1).pdf}
+    \caption{}
+    \label{fig:placeholder}
+\end{figure}
+\newpage
+They stop giving good approximations when the angle of oscillation get large. Ontop of that Taylor series only works for a short while, and Euler’s step-by-step method drifts over time, so both stop matching reality if you go too far or take too big steps.
+\subsection*{[3.4]}
+
+The procedure does not really change the only difference is we are now plotting against the first time derivative of $\theta$.this.
+
+They stop giving good approximations when the angle of oscillation get large. Ontop of that Taylor series only works for a short while, and Euler’s step-by-step method drifts over time, so both stop matching reality if you go too far or take too big steps.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{UnnamedNotebook-5bfb0fda-635e-428e-a332-3fc90133df46.pdf}
+    \label{fig:placeholder}
+\end{figure}
+\newpage
+
+\subsection*{[3.5]}
+$$\theta_{corrected}=\theta_0 cos(\frac{\pi \omega_0 K(m)}{2})$$
+The absolute error is 
+$$AE=|\theta_{corrected}-\theta_{Exact}|$$
+$$|\theta_{corrected}-\theta_{Exact}|=0.216rad$$
+$$|\theta_{Simple}-\theta_{Exact}|=4.793rad$$
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{UnnamedNotebook-3fbdb5bd-e37e-4220-90df-9dd993605796.pdf}
+    \label{fig:placeholder}
+\end{figure}
+\newpage
+\subsection*{[3.6]}
+To find the relative error we use
+$$RE=\frac{|\theta_{corrected}-\theta_{Exact}|}{|\theta_{Exact}|}$$
+$$\frac{|\theta_{corrected}-\theta_{Exact}|}{|\theta_{Exact}|}=0.202$$
+$$\frac{|\theta_{Simple}-\theta_{Exact}|}{|\theta_{Exact}|}=38.02$$
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{UnnamedNotebook-71dab99d-9575-44b1-b65d-8f2130b56992.pdf}
+    \label{fig:placeholder}
+\end{figure}
+
+\subsection*{[3.7]}
+
+They stop giving good approximations when the angle of oscillation get large. Ontop of that Taylor series only works for a short while, and Euler’s step-by-step method drifts over time, so both stop matching reality if you go too far or take too big steps.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{UnnamedNotebook-3ef7bb33-0755-4c81-ae57-4ee8e5a4dd30.pdf}
+    \label{fig:placeholder}
+\end{figure}
+\newpage
+
+\subsection*{[3.8]}
+The motion of the nonlinear pendulum differs from that of the simple pendulum in a  way. The simple pendulum significant for small angles, behaves in a predictable, its motion can be visualized as the shadow of a point moving uniformly around a circle, producing a phase-space trajectory that is a perfect ellipse. The nonlinear pendulum, by contrast, allows for larger swings, where the restoring force depends on $(\sin\theta)$ rather than $\theta$.It slows down near the turning points and accelerates near the center, tracing a trajectory that resembles a stretched or deformed ellipse. Geometrically, while the simple pendulum corresponds to a circular parametrisation with constant speed, the nonlinear pendulum corresponds to an elliptic parametrisation, with the period and speed of motion varying with amplitude.
+
+% ------------------------------------------------------------
+\end{document}
+% ----------
+% EOF
