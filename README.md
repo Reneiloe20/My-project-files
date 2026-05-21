@@ -1,7 +1,7 @@
 # Physics of Diffusion Models in Generative AI
 
 ## Overview
-This project explores the mathematics and physics behind diffusion models used in generative artificial intelligence. 
+This project explores the mathematics and physics behind diffusion models used in generative AI. 
 
 The work focuses on the diffusion equation and how probability distributions evolve over time, drawing parallels between statistical physics and modern AI image generation models.
 
