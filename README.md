@@ -48,14 +48,8 @@ P(x,t)
 ## Technologies Used
 - Python
 - NumPy
-- Matplotlib
 - LaTeX
 
 ---
 
-## Installation
 
-Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/your-repo-name.git
